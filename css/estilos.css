@@ -1,0 +1,552 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --Heading:'Merriweather', serif;
+    --Texto:'Caveat', cursive;
+    --botones: #FF5A5A;
+    --headeryseccion: #87D3FF;
+    --blanco: #fff;
+    --negro:#000;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: var(--Heading);
+}
+
+h2{
+    text-align: center;
+}
+
+p{
+    font-family: var(--Texto);
+}
+
+.contenedor{
+    width: 90%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+/*fin guias*/
+
+
+/*comienzo navegacion*/
+
+.navegacion{
+    position: absolute;
+    width: 100%;
+    background: var(--blanco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lista{
+    list-style: none;
+    display: block;
+    padding: 2rem;
+}
+
+.navegacion .lista .enlaces:hover{
+    background: var(--headeryseccion);
+    color: var(--blanco);
+}
+
+.navegacion .lista .enlaces{
+  text-decoration: none;
+  font-family: var(--Heading);
+  font-weight: 300;
+  color: var(--negro);
+  padding: 2rem;
+}
+
+@media (min-width: 768px) {
+    .hamburguesa{
+        display: block;
+    }
+    .input, #label{
+        display: none;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .navegacion .lista .enlaces{
+        display: block;
+    }
+
+    .navegacion{
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+    }
+
+    .navegacion .lista{
+        width: 100%;
+    }
+
+    .navegacion .lista.enlaces:hover{
+        background: var(--headeryseccion);
+        color: var(--blanco);
+    }
+
+    .hamburguesa{
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        margin: 10px;
+        z-index: 3;
+        cursor: pointer;
+    }
+
+    .div1{
+        position:absolute;
+        width: 40px;
+        height: 8px;
+        background: var(--negro);
+        margin: 5px;
+    }
+
+    .div2{
+        position: absolute;
+        width: 40px;
+        height: 8px;
+        background: var(--negro);
+        margin-top: 10px;
+    }
+
+    .div3{
+        position: absolute;
+        width: 40px;
+        height: 8px;
+        background: var(--negro);
+        margin-top: 10px;
+    }
+
+    .input, #label{
+        position: relative;
+        z-index: 3;
+        display: block;
+    }
+
+    .input{
+        display: none;
+    }
+
+
+
+    .input#desplegar:checked ~ .navegacion{
+        display: none;
+    }
+}
+
+/*fin navegacion*/
+
+
+/*comienzo header*/
+.header{
+    background-image: url(../img/header.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: -1;
+
+}
+
+
+
+.ola{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.header::before{
+    content: "";
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    background-image: linear-gradient(#87D3FF, #87D3FF);
+    mix-blend-mode: multiply;
+}
+
+
+.header-textos{
+    display: grid;
+    place-content: center;
+    z-index: 1;
+}
+
+.encabezado,
+.encabezado2{
+    margin: 0 auto;
+    text-shadow: 0 0 30px #fff;
+}
+
+
+
+
+@media (min-width: 768px) {
+    .encabezado{
+        font-size: 100px;
+        color: var(--blanco);
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    
+    .encabezado2{
+        font-size: 80px;
+        color: var(--blanco);
+        text-transform: uppercase;
+    }
+}
+
+@media (max-width: 720px) {
+    .encabezado{
+        font-size: 35px;
+        color: var(--blanco);
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    
+    .encabezado2{
+        font-size: 30px;
+        color: var(--blanco);
+        text-transform: uppercase;
+    }
+}
+
+/***********fin header******************/
+
+
+/****************inicio main**************************************/
+.main{
+    margin-top: 5rem;
+}
+
+
+@media (min-width: 768px) {
+    .contenido{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 4rem;
+    }
+
+}
+
+
+.img-main{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.titulo-main{
+    font-family: var(--Heading);
+    font-weight: 700;
+    font-size: 35px;
+    text-transform: uppercase;
+    margin-bottom: 5rem;
+    border-bottom: 2px solid var(--negro);
+}
+
+/*primera tarjeta*/
+.imagen1{
+    position: relative;
+    height: 100%;
+}
+
+.hover{
+    width: 100%;
+    opacity: 0;
+    height: 100%;
+    background: rgba(31,31,31, 0.9);
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: .2s all;
+    transform: translateX(-100px);
+}
+.hover:hover{
+   opacity: 1;
+   transform: translate(0);
+}
+
+.text-main1{
+    font-size: 30px;
+    position: absolute;
+    top: 40%;
+    color: var(--blanco);
+    text-align: center;
+}
+
+/*fin primera tarjeta*/
+
+
+/*2da tarjeta*/
+
+.imagen2{
+    position: relative;
+    height: 100%;
+}
+
+.hover2{
+    width: 100%;
+    opacity: 0;
+    height: 100%;
+    background: rgba(31,31,31, 0.9);
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: .2s all;
+    transform: translateX(-100px);
+}
+
+.hover2:hover{
+    opacity: 1;
+    transform: translate(0);
+}
+
+.text-main2{
+    color: var(--blanco);
+    font-size: 30px;
+    position: absolute;
+    top: 40%;
+    text-align: center;
+}
+
+/*fin segunda tarjeta*/
+
+
+/*comienzo tarjeta3*/
+.imagen3{
+    position: relative;
+    height: 100%;
+}
+
+.hover3{
+    width: 100%;
+    opacity: 0;
+    height: 100%;
+    background: rgba(31,31,31, 0.9);
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: .2s all;
+    transform: translateX(-100px);
+}
+
+.hover3:hover{
+    opacity: 1;
+    transform: translate(0);
+}
+
+.text-main3{
+    color: var(--blanco);
+    font-size: 30px;
+    position: absolute;
+    top: 40%;
+    text-align: center;
+}
+/*fin tarjeta3*/
+
+
+/*boton*/
+
+.botones{
+    display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.boton{
+    background: var(--botones);
+    padding: 20px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: var(--blanco);
+    font-family: var(--Heading);
+    text-align: center;
+    margin-top: 3rem;
+}
+
+
+.boton:hover{
+    background: transparent;
+    border: 2px solid var(--botones);
+    color: var(--botones);
+}
+
+/*fin seccion tarjetas*/
+
+
+
+
+
+/******************comienzo otras tarjetas**************/
+
+.tarjetas{
+    margin-top: 5rem;
+    position: relative;
+}
+
+.info-tarjetas{
+    font-family: var(--Heading);
+    font-size: 25px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.viaje{
+    font-weight: 300;
+}
+
+.diario{
+    font-weight: 700;
+}
+
+.parrafos{
+    font-size: 25px;
+}
+
+@media (min-width: 768px) {
+    .contenido-tarjetas{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+        margin-top: 5rem;
+    }
+}
+
+
+.tarjeta1{
+    width: 100%;
+    height: 100%;
+    background: var(--blanco);
+    padding: 20px 0;
+    box-shadow: 0px 1px 6px var(--negro);
+    margin-bottom: 2rem;
+}
+
+.texto-tarjeta{
+    padding: 10px;
+}
+
+.tarjeta2{
+    width: 100%;
+    height: 100%;
+    background: var(--blanco);
+    padding: 20px 0;
+    box-shadow: 0px 1px 6px var(--negro);
+    margin-bottom: 2rem;
+}
+
+.tarjeta3{
+    width: 100%;
+    height: 100%;
+    background: var(--blanco);
+    padding: 20px 0;
+    box-shadow: 0px 1px 6px var(--negro);
+    margin-bottom: 2rem;
+}
+
+.titulo-tarjeta{
+    font-family: var(--Heading);
+    font-weight: 700;
+    margin-bottom: 10px;
+    border: 3px solid var(--headeryseccion);
+    border-top: 0;
+    border-bottom: 0;
+    border-right: 0;
+}
+
+/*fin seccion de las tarjetas*/
+
+
+
+
+/*footer*/
+
+.footer{
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+}
+
+.text-footeer{
+    text-align: center;
+    font-family: var(--Heading);
+    font-weight: 700;
+    font-size: 25px;
+}
+
+
+
+.formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6rem;
+}
+
+.suscribete{
+    background: var(--botones);
+    padding: 20px;
+    color: var(--blanco);
+    border: 0;
+    cursor: pointer;
+    box-shadow: 0px 1px 6px var(--negro);
+}
+
+.suscribete:hover{
+    background: transparent;
+    border: 2px solid var(--botones);
+    color: var(--botones);
+}
+
+#form{
+    padding: 20px;
+    border: 0;
+    background: var(--blanco);
+    box-shadow: 0px 1px 6px var(--negro);
+}
+
+.text-footer-autor{
+    text-align: center;
+}
